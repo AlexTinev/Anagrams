@@ -1,0 +1,19 @@
+<?php
+function is_anagram($A, $B) {
+    # strings must contain only letters from the english alfabet
+    $paramsAreValidStrings = !(preg_match('/[^A-Za-z]/', $A) || preg_match('/[^A-Za-z]/', $B));
+    if($paramsAreValidStrings){
+          $result = true;
+          $A = strtolower($A);
+          $B = strtolower($B);
+          # in order to be anagrams words must not be identical
+          if ((count_chars($A,1) != count_chars($B,1)) || (strcmp($A,$B) == 0)) {
+                    $result = false;
+          }
+        return $result;
+    } else{
+      throw new InvalidArgumentException("The provided strings can contain only letters from the english alfabet");
+    }
+  }
+
+?>
