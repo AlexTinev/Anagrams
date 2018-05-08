@@ -4,10 +4,10 @@ function is_anagram($A, $B) {
     $notValidStrings = preg_match('/[^A-Za-z]/', $A) || preg_match('/[^A-Za-z]/', $B);
     if($notValidStrings) throw new InvalidArgumentException("The provided strings can contain only letters from the english alfabet");
     
-	$A = strtolower($A);
+    $A = strtolower($A);
     $B = strtolower($B);
     $areIdentical = strcmp($A,$B) == 0;
-	$notAnagrams = count_chars($A,1) != count_chars($B,1);
+    $notAnagrams = count_chars($A,1) != count_chars($B,1);
     
 	if ($areIdentical || $notAnagrams) return false;
     else return true;
