@@ -9,7 +9,7 @@ function is_anagram($A, $B) {
     $areIdentical = strcmp($A,$B) == 0;
     $notAnagrams = count_chars($A,1) != count_chars($B,1);
     
-	if ($areIdentical || $notAnagrams) return false;
+    if ($areIdentical || $notAnagrams) return false;
     else return true;
     }
 ?>
